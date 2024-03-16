@@ -1,0 +1,24 @@
+﻿<Window x:Class="KubernetesWatcher.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KubernetesWatcher"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="57*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Row="0" Grid.Column="0" Name="PodGrid" />
+        <DataGrid Grid.Row="0" Grid.Column="1" Name="NodeGrid" />
+        <DataGrid Grid.Row="1" Grid.Column="0" Name="PvcGrid" />
+        <DataGrid Grid.Row="1" Grid.Column="1" Name="PvGrid" />
+    </Grid>
+</Window>
