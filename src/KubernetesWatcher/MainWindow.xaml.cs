@@ -15,6 +15,8 @@ namespace KubernetesWatcher
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		private readonly string namespaceName = "hermes";
+
 		private readonly Timer timer = new(2000);
 		private readonly Kubernetes kubernetes;
 
@@ -48,8 +50,8 @@ namespace KubernetesWatcher
 		private async Task Timer_Elapsed(object? sender, System.Timers.ElapsedEventArgs e)
 		{
 			var nodes = await kubernetes.ListNodeAsync();
-			var pods = await kubernetes.ListNamespacedPodAsync("hermes");
-			var pvcs = await kubernetes.ListNamespacedPersistentVolumeClaimAsync("hermes");
+			var pods = await kubernetes.ListNamespacedPodAsync(namespaceName);
+			var pvcs = await kubernetes.ListNamespacedPersistentVolumeClaimAsync(namespaceName);
 			var pvs = await kubernetes.ListPersistentVolumeAsync();
 
 			Dispatcher.Invoke(() =>
