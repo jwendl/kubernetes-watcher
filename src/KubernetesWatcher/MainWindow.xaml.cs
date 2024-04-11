@@ -15,7 +15,7 @@ namespace KubernetesWatcher
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		private readonly string namespaceName = "hermes";
+		private readonly string namespaceName = "juswen";
 
 		private readonly Timer timer = new(2000);
 		private readonly Kubernetes kubernetes;
